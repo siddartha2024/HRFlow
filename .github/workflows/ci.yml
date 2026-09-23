@@ -20,7 +20,7 @@ jobs:
           python-version: "3.13"
 
       - name: Install dependencies
-        run: pip install dbt-duckdb faker pydantic python-dotenv python-dateutil requests pytest pytest-cov
+        run: pip install -r requirements.txt
 
       - name: Python syntax check
         run: |
