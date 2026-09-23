@@ -1,0 +1,29 @@
+name: HRFlow CI
+
+on:
+  push:
+    branches: [main, new_setup]
+  pull_request:
+    branches: [main]
+
+jobs:
+  install-check:
+    name: Install and syntax check
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install dbt-duckdb faker pydantic python-dotenv python-dateutil requests pytest pytest-cov
+
+      - name: Python syntax check
+        run: |
+          python -m py_compile ingestion/config.py
+          python -m py_compile scripts/init_warehouse.py
+          echo "✓ All Python files are syntax-clean"
