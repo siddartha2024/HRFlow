@@ -79,10 +79,6 @@ print([t[0] for t in tables])
 
 ## Expected: ['raw_attendance', 'raw_departments', 'raw_employees', 'raw_performance_reviews']
 
-```powershell
-['raw_attendance', 'raw_departments', 'raw_employees', 'raw_performance_reviews']
-```
-
 ---
 
 ## Project structure
