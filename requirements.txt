@@ -1,0 +1,21 @@
+# Data generation & validation
+faker>=40.39.0
+pydantic>=2.13.5
+python-dotenv>=1.2.3
+
+# Data warehouse
+duckdb>=1.5.5
+
+# dbt
+dbt-core>=1.12.5
+dbt-duckdb>=1.11.0
+
+# Utilities
+python-dateutil>=2.9.0
+
+# HTTP — Ollama API
+requests>=2.34.2
+
+# Testing
+pytest>=9.1.1
+pytest-cov>=7.1.0

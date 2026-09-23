@@ -1,0 +1,31 @@
+# dbt connection profile.
+#
+# This project uses DuckDB locally — same SQL dialect as Snowflake.
+# To switch to Snowflake, replace the dev output below with:
+#
+#   dev:
+#     type: snowflake
+#     account: <account_id>
+#     user: "{{ env_var('SNOWFLAKE_USER') }}"
+#     password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+#     role: TRANSFORMER
+#     database: HRFLOW
+#     warehouse: COMPUTE_WH
+#     schema: STAGING
+#     threads: 4
+
+# # what needs to be changed when switching from DuckDB to Snowflake:
+#   dbt layer (SQL models, tests, snapshots)   → 1 line in profiles.yml + 1 find-replace
+#   Python ingestion layer                     → swap connection object in 4 files
+#   Everything else                            → zero changes
+#
+# 
+# Every dbt model, test, and snapshot is adapter-agnostic and works unchanged.
+
+hrflow:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DUCKDB_PATH', '../data/warehouse.duckdb') }}"
+      threads: 4

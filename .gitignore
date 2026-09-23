@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# DuckDB
+data/*.duckdb
+data/*.duckdb.wal
+
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db
