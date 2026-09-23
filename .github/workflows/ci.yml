@@ -2,7 +2,7 @@ name: HRFlow CI
 
 on:
   push:
-    branches: [main, new_setup]
+    branches: [main]
   pull_request:
     branches: [main]
 
